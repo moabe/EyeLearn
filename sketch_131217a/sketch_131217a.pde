@@ -19,6 +19,7 @@ int count = 0;
 PImage bg;
 PImage animal1;
 PImage animal2;
+PImage leaf1;
 int a;
 
 Object lion;
@@ -30,10 +31,9 @@ void setup ()
    bg = loadImage("jungle.jpg");
    animal1 = loadImage("lion.png");
    animal2 = loadImage("monkey.png");
+   leaf1 = loadImage("leaf.png");
    
-   lion = new Object("Lion",50,70,animal1);
-   monkey = new Object("Monkey",350,170,animal2);
-
+   lion = new Object("Lion",150,170,animal1,leaf1);
 
   // Init STT with default manual record mode
   stt = new STT(this);
@@ -80,7 +80,8 @@ void draw ()
   int size1y=animal1.height;*/
   
   lion.display();
-  monkey.display();
+  lion.displayHide();
+  lion.moveHide();
   
 }
   /*
