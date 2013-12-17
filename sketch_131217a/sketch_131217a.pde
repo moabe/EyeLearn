@@ -18,13 +18,21 @@ int count = 0;
 // Floater above 
 PImage bg;
 PImage animal1;
+PImage animal2;
 int a;
+
+Object lion;
+Object monkey;
 
 void setup ()
 {
    size(625, 480);
    bg = loadImage("jungle.jpg");
    animal1 = loadImage("lion.png");
+   animal2 = loadImage("monkey.png");
+   
+   lion = new Object("Lion",50,70,animal1);
+   monkey = new Object("Monkey",350,170,animal2);
 
 
   // Init STT with default manual record mode
@@ -65,12 +73,17 @@ void draw ()
         }
    }
    
-  int pos1x=70;
+  /*int pos1x=70;
   int pos1y=50;  
   image(animal1, pos1x, pos1y);
   int size1x=animal1.width;
-  int size1y=animal1.height;
-
+  int size1y=animal1.height;*/
+  
+  lion.display();
+  monkey.display();
+  
+}
+  /*
   // floater nedan
   float newValueFromStreamX = mouseX;
   float newValueFromStream = mouseY;
@@ -110,13 +123,7 @@ void transcribe (String utterance, float confidence)
   result = utterance;
 }
  
-// Use any key to begin and end a record
-public void keyPressed () {
-  stt.begin();
-}
-public void keyReleased () {
-  stt.end();
-}
+
 
 
 //FLOATER VOIDS NEDAN
@@ -178,5 +185,5 @@ void sleep(int ms) {
   
 }
 
-//FLOATER VOIDS OVAN
+//FLOATER VOIDS OVAN*/
 
